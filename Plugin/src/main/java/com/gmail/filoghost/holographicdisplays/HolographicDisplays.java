@@ -8,7 +8,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.gmail.filoghost.holographicdisplays.SimpleUpdater.ResponseHandler;
 import com.gmail.filoghost.holographicdisplays.api.internal.BackendAPI;
 import com.gmail.filoghost.holographicdisplays.bridge.bungeecord.BungeeServerTracker;
 import com.gmail.filoghost.holographicdisplays.bridge.protocollib.ProtocolLibHook;
@@ -71,20 +70,6 @@ public class HolographicDisplays extends JavaPlugin {
 
 		// Load the configuration.
 		Configuration.load(this);
-		
-		if (Configuration.updateNotification) {
-			new SimpleUpdater(this, 75097).checkForUpdates(new ResponseHandler() {
-				
-				@Override
-				public void onUpdateFound(final String newVersion) {
-
-					HolographicDisplays.newVersion = newVersion;
-					getLogger().info("Found a new version available: " + newVersion);
-					getLogger().info("Download it on Bukkit Dev:");
-					getLogger().info("dev.bukkit.org/bukkit-plugins/holographic-displays");
-				}
-			});
-		}
 		
 		String version = VersionUtils.getBukkitVersion();
 		
