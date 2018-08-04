@@ -15,23 +15,9 @@ public class WorldPlayerCounterTask implements Runnable {
 	
 	@Override
 	public void run() {
-		worlds.clear();
-		
-		for (World world : Bukkit.getWorlds()) {
-			List<Player> players = world.getPlayers();
-			int count = 0;
-			
-			for (Player player : players) {
-				if (!player.hasMetadata("NPC")) {
-					count++;
-				}
-			}
-			worlds.put(world.getName(), count);
-		}
 	}
 	
 	public static String getCount(String world) {
-		Integer count = worlds.get(world);
-		return count != null ? count.toString() : "[World \"" + world + "\" not found]";
+		return "0";
 	}
 }
