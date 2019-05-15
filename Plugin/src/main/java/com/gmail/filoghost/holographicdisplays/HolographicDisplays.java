@@ -155,7 +155,7 @@ public class HolographicDisplays extends JavaPlugin {
 		
 		// Start repeating tasks.
 		Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new BungeeCleanupTask(), 5 * 60 * 20, 5 * 60 * 20);
-		Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new WorldPlayerCounterTask(), 0L, 3 * 20);
+		//Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new WorldPlayerCounterTask(), 0L, 3 * 20);
 		
 		if (getCommand("holograms") == null) {
 			printWarnAndDisable(
